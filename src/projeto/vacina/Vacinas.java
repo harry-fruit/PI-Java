@@ -55,9 +55,9 @@ public class Vacinas {
         
         this.nomesVacinas.set(index, nome);
         this.doses.set(index, doses);
-        //this.reacoes.set(index, reacoes);
-        //this.fabricantes.set(index, fabricante);
-        //this.validades.set(index, validade);
+        this.reacoes.set(index, reacoes);
+        this.fabricantes.set(index, fabricante);
+        this.validades.set(index, validade);
 
         System.out.println("Vacina atualizada com sucesso.");
     }
