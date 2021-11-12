@@ -74,7 +74,13 @@ public class ProjetoVacina {
     }
     
     public static void menu(){
-        int opcoes = Integer.parseInt(JOptionPane.showInputDialog("Insira a opção desejada: \n1 - Pessoas \n2 - Pacientes \n3 - Funcionarios \n4 - Vacina \n5 - Vacinacao "));
+        String message1 = "Insira a opção desejada: \n1 - Pessoas \n2 - Pacientes \n3 - Funcionarios \n4 - Vacina \n5 - Vacinacao ";
+        String message2 = "Insira a opção desejada: \n1 - Cadastrar \n2 - Atualizar \n3 - Consultar \n4 - Remover";
+        
+        int opcao1 = Integer.parseInt(JOptionPane.showInputDialog(message1));
+        if(opcao1 == 1){
+            int opcao2 = Integer.parseInt(JOptionPane.showInputDialog(message2));
+        }
     }
     
 }
