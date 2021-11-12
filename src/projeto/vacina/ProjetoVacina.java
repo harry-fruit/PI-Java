@@ -1,9 +1,17 @@
 package projeto.vacina;
 
+import javax.swing.JOptionPane;
+
 public class ProjetoVacina {
 
     public static void main(String[] args) {
-        //todo
+        Vacinas vacinas = createVacinas();
+        
+        Vacinacoes novaVacinacao = new Vacinacoes(vacinas);
+        novaVacinacao.cadastrarVacinacao("janeiro", "Qualquer", 2);
+        novaVacinacao.consultarVacinacoes();
+        
+        menu();
     }
     
     public static void runPessoas (){
@@ -53,6 +61,20 @@ public class ProjetoVacina {
         vacinasDB.consultarVacina(2);
         vacinasDB.removerVacina(3);
         vacinasDB.consultarVacinas();
+    }
+    
+    public static Vacinas createVacinas(){
+        Vacinas vacinasDB = new Vacinas();
+        
+        vacinasDB.cadastrarVacina(2, "Pfizer", "ND/A", "30 dias", "Pfizer");
+        vacinasDB.cadastrarVacina(1, "J.J", "ND/A", "30 dias", "Johnsons");
+        vacinasDB.cadastrarVacina(2, "CoronaVac", "ND/A", "30 dias", "Butantã");
+        vacinasDB.cadastrarVacina(2, "AstraZeneca", "ND/A", "30 dias", "Lodres");
+        return vacinasDB;
+    }
+    
+    public static void menu(){
+        int opcoes = Integer.parseInt(JOptionPane.showInputDialog("Insira a opção desejada: \n1 - Pessoas \n2 - Pacientes \n3 - Funcionarios \n4 - Vacina \n5 - Vacinacao "));
     }
     
 }

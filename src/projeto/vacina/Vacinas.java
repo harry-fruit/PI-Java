@@ -3,12 +3,12 @@ package projeto.vacina;
 import java.util.ArrayList;
 
 public class Vacinas {
-    protected ArrayList<Integer> idVacinas = new ArrayList<Integer>(); 
-    protected ArrayList<Integer> doses = new ArrayList<Integer>();
-    protected ArrayList<String> nomesVacinas = new ArrayList<String>(); 
-    protected ArrayList<String> reacoes = new ArrayList<String>(); 
-    protected ArrayList<String> validades = new ArrayList<String>(); 
-    protected ArrayList<String> fabricantes = new ArrayList<String>(); 
+    protected ArrayList<Integer> idVacinas = new ArrayList<>(); 
+    protected ArrayList<Integer> doses = new ArrayList<>();
+    protected ArrayList<String> nomesVacinas = new ArrayList<>(); 
+    protected ArrayList<String> reacoes = new ArrayList<>(); 
+    protected ArrayList<String> validades = new ArrayList<>(); 
+    protected ArrayList<String> fabricantes = new ArrayList<>(); 
     
     public void cadastrarVacina(int doses, String nomeVacina, String reacoes, String validade, String fabricante){ 
         this.idVacinas.add(this.idVacinas.size() + 1);
@@ -55,9 +55,9 @@ public class Vacinas {
         
         this.nomesVacinas.set(index, nome);
         this.doses.set(index, doses);
-        //this.reacoes.set(index, reacoes);
-        //this.fabricantes.set(index, fabricante);
-        //this.validades.set(index, validade);
+        this.reacoes.set(index, reacoes);
+        this.fabricantes.set(index, fabricante);
+        this.validades.set(index, validade);
 
         System.out.println("Vacina atualizada com sucesso.");
     }
@@ -76,5 +76,15 @@ public class Vacinas {
         this.fabricantes.remove(index);
         this.validades.remove(index);
         System.out.println("Vacina removida com sucesso.");
+    }
+    
+    public String consulteVacinaPorId (int idVacina){
+        int index = this.idVacinas.indexOf(idVacina);
+        
+        if(index == -1){
+            return "ND/A";
+        }
+        
+        return this.nomesVacinas.get(index);
     }
 }
